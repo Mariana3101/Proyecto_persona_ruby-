@@ -1,0 +1,26 @@
+<div class="container">
+   <div class="row">
+    <div class="card col-12">
+      <div class="card-body">
+        <p id="notice"><%= notice %></p>
+
+        <h2> Detalle de Persona</h2>
+
+        <p>Nombre </p>
+        <%= @persona.nombre %>
+        <p>Apellido</p>
+        <%= @persona.apellido %>
+        <p>Fecha de nacimiento</p>
+        <%= @persona.fecha_de_nacimiento %>
+        <p>DNI</p>
+        <%= @persona.dni %>
+        <p>Edad en años</p>
+        <%= @edad %>
+        <br>
+        <br>
+        <%= link_to 'Editar', edit_persona_path(@persona) %> |
+        <%= link_to 'Volver', personas_path %>
+      </div>
+    </div>
+  </div>
+</div>

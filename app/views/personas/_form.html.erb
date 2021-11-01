@@ -1,0 +1,41 @@
+
+  <%= form_with(model: persona) do |form| %>
+    <% if persona.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(persona.errors.count, "errores") %> Debe corregir los siguientes campos:</h2>
+
+        <ul>
+          <% persona.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="card">
+      <div class="card-body">
+        <div class="mb-3" >
+          <%= form.label:nombre , {class:"form-label"} %>
+          <%= form.text_field:nombre, {class: "form-coltrol", placeholder:"Ana "} %>
+        </div>
+        <div class="mb-3">
+          <%= form.label:apellido, {class:"form-label"} %>
+          <%= form.text_field:apellido, {class: "form-coltrol", placeholder:"Perez "}  %>
+        </div>
+        <div class="mb-3">
+          <%= form.label:fecha_de_nacimiento, {class:"form-label"} %>
+          <%= form.date_select:fecha_de_nacimiento, start_year: 1920, start_end: 2050%>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label:dni,  {class:"form-label"} %>
+            
+          <%= form.number_field:dni, type: "number", min:1 %>
+        </div>
+
+        
+          <%= form.submit "Enviar", class: "btn btn-primary" %>
+        
+      </div>
+    </div>
+
+  <% end %>
