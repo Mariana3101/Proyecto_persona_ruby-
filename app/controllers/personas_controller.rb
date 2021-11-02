@@ -4,7 +4,9 @@ class PersonasController < ApplicationController
   # GET /personas or /personas.json
   def index
    
-    @personas = Persona.select("id, nombre, apellido, dni, fecha_de_nacimiento, strftime('%m', fecha_de_nacimiento) as mes, cast(strftime('%Y.%m%d', 'now') - strftime('%Y.%m%d', fecha_de_nacimiento ) as int) as edad").order("mes")
+    @personas = Persona.select("id, nombre, apellido, dni, fecha_de_nacimiento,
+       strftime('%m', fecha_de_nacimiento) as mes, cast(strftime('%Y.%m%d', 'now') - strftime('%Y.%m%d', 
+        fecha_de_nacimiento ) as int) as edad").order("mes")
     promedioEdades
   end
 
