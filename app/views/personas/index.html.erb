@@ -1,7 +1,11 @@
 
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Nueva Persona', new_persona_path %>
+<div>
+  <%= link_to 'Nueva Persona', new_persona_path, :class => "btn btn-light" %> 
+</div>
+
+
 <div class="card">
   <div class="card-body">
     <h1>Personas</h1>
@@ -37,9 +41,9 @@
         <td ><%= persona.apellido %></td>
         <td ><%= persona.fecha_de_nacimiento %></td>
         <td ><%= persona.dni %></td>
-        <td><%= link_to 'Detalle', persona %></td>
-        <td><%= link_to 'Editar', edit_persona_path(persona) %></td>
-        <td><%= link_to 'Borrar', persona, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+        <td><%= link_to 'Detalle', persona,  :class => "btn btn-light" %></td>
+        <td><%= link_to 'Editar', edit_persona_path(persona), :class => "btn btn-light" %></td>
+        <td><%= link_to 'Borrar', persona, method: :delete, data: { confirm: 'Estas seguro?' } , :class => "btn btn-light"%></td>
    
       </tr>
 

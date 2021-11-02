@@ -4,8 +4,8 @@
       <h1>Editar Persona</h1>
       <%= render 'form', persona: @persona %>
 
-      <%= link_to 'Detalle', @persona %> |
-      <%= link_to 'Volver', personas_path %>
+      <%= link_to 'Detalle', @persona, :class => "btn btn-light" %> 
+      <%= link_to 'Volver', personas_path, :class => "btn btn-light" %>
     </div>
   </div>
   
